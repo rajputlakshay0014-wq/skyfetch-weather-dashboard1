@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
         <h1>🌤️ SkyFetch</h1>
         <p class="tagline">Your Personal Weather Dashboard</p>
-        
+
+        <div class="search-section">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button id="search-btn">🔍 Search</button>
+        </div>
+
         <div id="weather-display">
-            <p class="loading">Loading weather data...</p>
+            <p class="welcome-text">Enter a city to see weather 🌍</p>
         </div>
     </div>
 
-    <!-- Axios CDN -->
+    <!-- Axios CDN (MUST be before app.js) -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-    <!-- Your JavaScript -->
+
+    <!-- Your JS -->
     <script src="app.js"></script>
+
 </body>
 </html>
