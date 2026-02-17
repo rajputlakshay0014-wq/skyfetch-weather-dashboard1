@@ -4,30 +4,52 @@
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea, #764ba2);
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
+/* MAIN CARD */
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 20px;
-    max-width: 800px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    max-width: 500px;
     width: 100%;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* TITLE */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tagline {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* SEARCH */
 .search-section {
+    width: 100%;
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 #city-input {
@@ -35,10 +57,11 @@ body {
     padding: 12px 20px;
     border-radius: 25px;
     border: 2px solid #ddd;
+    font-size: 1rem;
+    outline: none;
 }
 
 #city-input:focus {
-    outline: none;
     border-color: #667eea;
 }
 
@@ -49,23 +72,52 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     cursor: pointer;
+    transition: 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.weather-info {
+#search-btn:hover {
+    transform: scale(1.05);
+}
+
+/* WEATHER DISPLAY */
+#weather-display {
+    width: 100%;
     margin-top: 20px;
+}
+
+/* CURRENT WEATHER */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city-name {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .temperature {
     font-size: 3rem;
-    font-weight: bold;
     color: #667eea;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.description {
+    color: #555;
+    text-transform: capitalize;
 }
 
 .weather-icon {
     width: 100px;
 }
 
-/* Forecast Section */
+/* FORECAST SECTION */
 .forecast-section {
     margin-top: 30px;
     padding-top: 20px;
@@ -73,18 +125,21 @@ body {
 }
 
 .forecast-title {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
+/* FORECAST GRID */
 .forecast-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
+/* FORECAST CARD */
 .forecast-card {
-    background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
-    padding: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 15px;
     border-radius: 15px;
     text-align: center;
     transition: 0.3s;
@@ -94,24 +149,68 @@ body {
     transform: translateY(-5px);
 }
 
-.forecast-card img {
-    width: 60px;
-}
-
 .forecast-temp {
-    font-size: 1.5rem;
     font-weight: bold;
-    color: #667eea;
+    margin: 8px 0;
 }
 
-.error-message {
-    margin-top: 20px;
-    padding: 15px;
-    background: #ffe5e5;
-    color: #cc0000;
-    border-radius: 10px;
+/* HISTORY */
+.history-section {
+    margin-top: 25px;
 }
 
+.history-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.history-btn {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+}
+
+/* LOADING */
 .loading-container {
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eee;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: spin 1s linear infinite;
+}
+
+/* ERROR */
+.error-message {
+    color: red;
     margin-top: 20px;
+}
+
+/* WELCOME */
+.welcome-message {
+    color: #444;
+    padding: 20px;
+}
+
+/* ANIMATION */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

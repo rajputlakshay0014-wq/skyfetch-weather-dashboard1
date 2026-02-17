@@ -4,23 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyFetch - Weather Dashboard</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
+
+        <!-- TITLE -->
         <h1>🌤️ SkyFetch</h1>
         <p class="tagline">Your Personal Weather Dashboard</p>
 
+        <!-- SEARCH BAR -->
         <div class="search-section">
-            <input type="text" id="city-input" placeholder="Enter city name...">
+            <input 
+                type="text" 
+                id="city-input" 
+                placeholder="Enter city name..."
+            >
             <button id="search-btn">🔍 Search</button>
         </div>
 
-        <div id="weather-display"></div>
+        <!-- WEATHER + FORECAST + HISTORY WILL COME HERE -->
+        <div id="weather-display">
+            <div class="welcome-message">
+                <h3>🌍 Welcome to SkyFetch</h3>
+                <p>Search any city to see current weather & forecast</p>
+            </div>
+        </div>
+
     </div>
 
+    <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- APP JS -->
     <script src="app.js"></script>
 
 </body>
